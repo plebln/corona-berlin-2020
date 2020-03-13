@@ -9,7 +9,19 @@ Dates are the date of the *press release*, which is generally the
 day after the time for which numbers were reported.
 
 For the first few days, all cases were listed, then totals
-broken out by Berzirk (district) and age.
+broken out by Bezirk (district) and age.
 
 See https://www.berlin.de/presse
 
+## Data file
+The main file is virus-berlin-2020.dat
+
+There is one row for each day. Columns are separated by white space.
+Columns are:
+
+- Date, as YYYY-MM-DD
+- Total number of cases in Berlin
+- Delta, increase from yesterday's total
+- One column for each [_Bezirk_](http://en.wikipedia.de/wiki/Boroughs and neighborhoods of Berlin),
+  in alphabetical order
+- The source of the statistics for this day
