@@ -22,9 +22,10 @@ Columns are:
 - Date, as YYYY-MM-DD
 - Total number of cases in Berlin
 - Delta, increase from yesterday's total
-- One column for each [_Bezirk_](http://en.wikipedia.de/wiki/Boroughs and neighborhoods of Berlin),
+- One column for each [_Bezirk_](http://en.wikipedia.de/wiki/Boroughs%20and%20neighborhoods%20of%20Berlin),
   in alphabetical order
 - The source of the statistics for this day
 
 See [figure_1.png](figure_1.png)
+
 
