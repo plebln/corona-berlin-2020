@@ -25,3 +25,6 @@ Columns are:
 - One column for each [_Bezirk_](http://en.wikipedia.de/wiki/Boroughs and neighborhoods of Berlin),
   in alphabetical order
 - The source of the statistics for this day
+
+See [figure_1.png](figure_1.png)
+
