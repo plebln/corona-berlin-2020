@@ -1,9 +1,5 @@
-
-
-
 #!/usr/bin/env python3
 
-from pylab import *
 import numpy as np
 import matplotlib.pyplot as plt
 
