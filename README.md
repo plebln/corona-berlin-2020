@@ -28,4 +28,7 @@ Columns are:
 
 See [figure_1.png](figure_1.png)
 
+<img src="figure_1.png" alt="figure_1.png">
+
+
 
