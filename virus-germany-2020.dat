@@ -2,7 +2,10 @@
 # Raw data:
 #  git clone https://github.com/CSSEGISandData/2019-nCoV
 #  cd csse_covid_19_data/csse_covid_19_daily_reports
-#  cat *csv | grep Germany | cut -d, -f3-4 | sed -e "s/[T,]/ /g" > germany.dat
+#  cat *csv | grep Germany | cut -d, -f3-4 \
+#    | sed -e "s/[T,]/ /g" \
+#    | gawk -e '($1 ~ /^2020[^\/]*$/) {x1=$1 ; gsub(/-/, " ", $1) ; print x1,strftime("%j",mktime($1" 00 00 00")),$3}' \
+#    > germany.dat
 #
 #  Change 2020-03-11 to 2020-03-13. Remove days before 2020-03-01
 #
@@ -24,7 +27,8 @@
 2020-03-15 75  5795
 2020-03-16 76  7272
 2020-03-17 77  9257 
-2020-03-18 78 12327
-2020-03-19 79 15320
-2020-03-20 80 19848
-2020-03-21 81 22213
+2020-03-18 078 12327
+2020-03-19 079 15320
+2020-03-20 080 19848
+2020-03-21 081 22213
+2020-03-22 082 24873
