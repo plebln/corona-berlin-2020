@@ -38,22 +38,41 @@ r = 0.3
 z = A * np.exp(r * (doys - 60))
 
 fig = plt.figure()
+gs = matplotlib.gridspec.GridSpec(nrows=2, ncols=1, height_ratios=[3,1])
+
 myFmt = matplotlib.dates.DateFormatter('%d.%m')
-fig.gca().xaxis.set_major_formatter(myFmt)
 
-plt.semilogy(doys-1, values, marker='o', label='Confirmed')
-plt.semilogy(doys-1, z, linestyle="--", label='%g exp(%g [d - 60])' % (A, r))
-plt.arrow(77-1, 60, 0, 240)
-plt.text(76.7-1, 50, 'Schools closed', horizontalalignment='right')
+ax0 = fig.add_subplot(gs[0,0])
+ax0.xaxis_date()
+ax0.xaxis.set_major_formatter(myFmt)
 
-bpop = 3748148    # Wikipedia, 31 Dec 2018
-gpop = 831490300  # Wikipedia, 30 Sept 2019
+ax0.semilogy(doys-1, values, marker='o', label='Confirmed')
+ax0.semilogy(doys-1, z, linestyle="--", label='%g exp(%g [d - 60])' % (A, r))
+ax0.arrow(77-1, 60, 0, 240)
+ax0.text(76.7-1, 50, 'Schools closed', horizontalalignment='right')
+ax0.arrow(82-1, 200, 0, 600)
+ax0.text(81.7-1, 200, '"Lockdown"', horizontalalignment='right')
+
+bpop = 3748148    # Wikipedia, population of Berlin, at 31 Dec 2018
+gpop = 831490300  # Wikipedia, population of Germany, at 30 Sept 2019
 gscale = bpop / gpop
 
 gdates, gdoys, gvalues = fetch('virus-germany-2020.dat')
-plt.semilogy(gdoys-1, gvalues * gscale, marker='x', label='Germany (scaled)')
+ax0.semilogy(gdoys-1, gvalues * gscale, marker='x', label='Germany (scaled)')
+ax0.legend(loc='lower right')
 
 plt.title('Confirmed coronavirus cases in Berlin and Germany (scaled)')
-plt.legend(loc='lower right')
+
+rdelta = np.zeros(len(doys))
+for j in range(3, len(doys)):
+    rdelta[j] = 100.0 * (values[j] - values[j-1]) / values[j-1]
+
+ax1 = fig.add_subplot(gs[1,0])
+ax1.xaxis_date()
+ax1.xaxis.set_major_formatter(myFmt)
+ax1.plot(doys[0:]-1, rdelta[0:], 'bo')
+ax1.set_title('Relative daily increase (%)')
 plt.xlabel('Date in 2020')
+
+
 plt.show()
