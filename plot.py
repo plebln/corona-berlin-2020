@@ -35,7 +35,16 @@ for f in range(len(datestrs)):
 dates = matplotlib.dates.date2num(datetimes)
 A = 3.0
 r = 0.3
-z = A * np.exp(r * (doys - 60))
+
+horizon = doys[-1] + 14  # Look no further than this into the future.
+horizon_datetime = datetime.datetime.strptime('2020-04-14', '%Y-%m-%d')
+doys_z = np.linspace(60, horizon)
+z = A * np.exp(r * (doys_z - 60))
+
+A_2 = 900   # n(doy=080) was 868
+r_2 = 0.12
+doys_z2 = np.linspace(80, horizon)
+z_2 = A_2 * np.exp(r_2 * (doys_z2 - 80))
 
 fig = plt.figure()
 gs = matplotlib.gridspec.GridSpec(nrows=2, ncols=1, height_ratios=[3,1])
@@ -47,7 +56,11 @@ ax0.xaxis_date()
 ax0.xaxis.set_major_formatter(myFmt)
 
 ax0.semilogy(doys-1, values, marker='o', label='Confirmed')
-ax0.semilogy(doys-1, z, linestyle="--", label='%g exp(%g [d - 60])' % (A, r))
+ax0.semilogy(doys_z-1, z,
+             linestyle="-.", label='%g exp(%g [d - 60])' % (A, r))
+ax0.semilogy(doys_z2-1, z_2,
+             linestyle="--", label='%g exp(%g [d - 80])' % (A_2, r_2))
+
 ax0.arrow(77-1, 60, 0, 240)
 ax0.text(76.7-1, 50, 'Schools closed', horizontalalignment='right')
 ax0.arrow(82-1, 200, 0, 600)
@@ -70,7 +83,9 @@ for j in range(3, len(doys)):
 ax1 = fig.add_subplot(gs[1,0])
 ax1.xaxis_date()
 ax1.xaxis.set_major_formatter(myFmt)
+
 ax1.plot(doys[0:]-1, rdelta[0:], 'bo')
+#ax1.set_xlim([dates[0], horizon_datetime])
 ax1.set_title('Relative daily increase (%)')
 plt.xlabel('Date in 2020')
 
