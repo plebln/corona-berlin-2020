@@ -29,10 +29,13 @@
 2020-03-24   084  1425	     206	170	151	66	46	223	128	143	107	48	105	154	84	3 pressemitteilung.911446.php
 2020-03-25   085  1645	     220	195	204	73	49	254	160	158	119	52	120	161	101	4 pressemitteilung.911935.php
 2020-03-26   086  1937	     292	228	220	80	58	311	187	191	132	67	138	208	117	8 presse912475
-2020-03-27   087  2152       216
-2020-03-28   088  2337       185
+2020-03-27   087  2152       216	278	233	90	68	331	213	225	133	74	147	231	129	8 presse913050
+2020-03-28   088  2337       185	300	233	90	78	367	248	241	133	86	182	244	135	9 verstorben, 64 intensiv - presse913086
+2020-03-29   089  2462	     125	302	262	90	80	398	248	252	143	90	197	257     143     11 pressesmitteilung.
 
 
 # Notes:
 #  (1) Date of Pressemitteilung. Until 15.03.2020, numbers reported
 #      were generally for the *previous* day.
+#  (2) Recovered ("genesen") numbers started around 2020-03-28.
+

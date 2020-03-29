@@ -8,6 +8,7 @@
 #    > germany.dat
 #
 #  Change 2020-03-11 to 2020-03-13. Remove days before 2020-03-01
+#  Later:  need columns -d, -f5,8 because regions, lat, lon.
 #
 # Date     Doy n_Germany
 2020-03-01 61  130
@@ -37,3 +38,4 @@
 2020-03-25 085 37323
 2020-03-26 086 43938
 2020-03-27 087 50871
+2020-03-28 088 57695

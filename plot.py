@@ -36,15 +36,22 @@ dates = matplotlib.dates.date2num(datetimes)
 A = 3.0
 r = 0.3
 
-horizon = doys[-1] + 14  # Look no further than this into the future.
-horizon_datetime = datetime.datetime.strptime('2020-04-14', '%Y-%m-%d')
+future_days = 7
+horizon = doys[-1] + future_days  # Look no further than this into the future.
+print(datetimes[-1])
+horizon_datetime = datetimes[-1] + datetime.timedelta(future_days, 0, 0, 0)
+#
+print('Horizon:', horizon_datetime)
+
 doys_z = np.linspace(60, horizon)
 z = A * np.exp(r * (doys_z - 60))
+print('On', horizon_datetime, 'predict', int(z[-1]))
 
 A_2 = 900   # n(doy=080) was 868
 r_2 = 0.12
 doys_z2 = np.linspace(80, horizon)
 z_2 = A_2 * np.exp(r_2 * (doys_z2 - 80))
+print('On', horizon_datetime, 'predict', int(z_2[-1]))
 
 fig = plt.figure()
 gs = matplotlib.gridspec.GridSpec(nrows=2, ncols=1, height_ratios=[3,1])
@@ -85,7 +92,7 @@ ax1.xaxis_date()
 ax1.xaxis.set_major_formatter(myFmt)
 
 ax1.plot(doys[0:]-1, rdelta[0:], 'bo')
-#ax1.set_xlim([dates[0], horizon_datetime])
+ax1.set_xlim([doys[0]-2, horizon])
 ax1.set_title('Relative daily increase (%)')
 plt.xlabel('Date in 2020')
 
