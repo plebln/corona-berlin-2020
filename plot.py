@@ -73,13 +73,13 @@ ax0.text(76.7-1, 50, 'Schools closed', horizontalalignment='right')
 ax0.arrow(82-1, 200, 0, 600)
 ax0.text(81.7-1, 200, '"Lockdown"', horizontalalignment='right')
 
-bpop = 3748148    # Wikipedia, population of Berlin, at 31 Dec 2018
-gpop = 831490300  # Wikipedia, population of Germany, at 30 Sept 2019
+bpop =  3748148    # Wikipedia, population of Berlin, at 31 Dec 2018
+gpop = 83149030    # Wikipedia, population of Germany, at 30 Sept 2019
 gscale = bpop / gpop
 
 gdates, gdoys, gvalues = fetch('virus-germany-2020.dat')
 ax0.semilogy(gdoys-1, gvalues * gscale, marker='x', label='Germany (scaled)')
-ax0.legend(loc='lower right')
+ax0.legend(loc='upper left')
 
 plt.title('Confirmed coronavirus cases in Berlin and Germany (scaled)')
 
