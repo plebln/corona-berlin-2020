@@ -43,9 +43,9 @@ horizon_datetime = datetimes[-1] + datetime.timedelta(future_days, 0, 0, 0)
 #
 print('Horizon:', horizon_datetime)
 
-doys_z = np.linspace(60, horizon)
+doys_z = np.linspace(60, 102, 43)  # Just to 2020-04-11
 z = A * np.exp(r * (doys_z - 60))
-print('On', horizon_datetime, 'predict', int(z[-1]))
+print('On', doys_z[-1], 'predict', int(z[-1]))
 
 A_2 = 900   # n(doy=080) was 868
 r_2 = 0.12

@@ -1,5 +1,7 @@
 
 # From daily press releases at <https://www.berlin.de/sen/gpg/>
+# Now somewhat obselete as Berlin has made available
+# <https://berlin.de/corona/fallstatistik/>
 
 # Date(1)  | doy | n_Berlin |  delta | ChWi  | FrKr | Li  |  MaHel | Mitte | Neuk | Pankow | Rei | Spa | StZe | TeSch | TrKö | Fatalities | Source
 2020-03-01   61    1           1        0       0    0       1       0      0        0        0     0   0        0     pressemitteilung.901388.php
@@ -41,6 +43,7 @@
 2020-04-05   096  3687	     62		462	352	142	127	537	392	378	248	150	312	394	193	26 pressemitteilung.916463.php
 2020-04-06   097  3862	     175	477	352	154	133	580	407	390	283	152	329	407	198	28 pressemitteilung.917304.php
 2020-04-07   098  4038       176	500	360	158	142	597	426	409	300	165	348	424	209	32 pressemitteilung.917938.php
+2020-04-08   099  4212	     174	535	366	158	148	617	444	419	325	172	366	440	222	37 pressemitteilung.918433.php
 
 	
 # Notes:
