@@ -47,8 +47,11 @@
 2020-04-09   100  4357	     145	545	372	171	155	640	465	427	344	176	377	456	229	42 pressemitteilung.919206.php
 2020-04-10   101  4446	     89		557	487	171	163	656	470	442	344	176	385	460	235	46 	pressemitteilung.919237.php
 2020-04-11   102  4553	     107	558	390	177	167	690	474	450	354	180	401	474	238	50	pressemitteilung.919248.php
+2020-04-12   103  4583	     30		558	393	177	171	697	474	457	354	182	405	477	238	51	pressemitteilung.919278.php
+2020-04-13   104  4667	     84		570	397	177	178	723	479	462	366	180	415	480	240	56	pressemitteilung.919386.php
 
 # Notes:
 #  (1) Date of Pressemitteilung. Until 15.03.2020, numbers reported
 #      were generally for the *previous* day.
 #  (2) Recovered ("genesen") numbers started around 2020-03-28.
+#  (3) Why is there -2 for Spandau on 2020-04-13?

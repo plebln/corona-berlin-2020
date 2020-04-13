@@ -57,6 +57,7 @@ A_3 = 4500
 r_3 = 0.04
 doys_z3 = doys_z2
 z_3 = A_3 * np.exp(r_3 * (doys_z3 - 102))
+print('On', horizon_datetime, 'predict', int(z_3[-1]))
 
 fig = plt.figure()
 gs = matplotlib.gridspec.GridSpec(nrows=2, ncols=1, height_ratios=[3,1])
