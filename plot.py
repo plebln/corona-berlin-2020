@@ -36,7 +36,7 @@ dates = matplotlib.dates.date2num(datetimes)
 A = 3.0
 r = 0.3
 
-future_days = 20  # May 1 ???
+future_days = 10  # May 1 ???
 horizon = doys[-1] + future_days  # Look no further than this into the future.
 print('Most recent day', datetimes[-1])
 horizon_datetime = datetimes[-1] + datetime.timedelta(future_days, 0, 0, 0)
@@ -68,14 +68,14 @@ ax0 = fig.add_subplot(gs[0,0])
 ax0.xaxis_date()
 ax0.xaxis.set_major_formatter(myFmt)
 
-ax0.set_ylim([2, 200000])
-ax0.semilogy(doys-1, values, marker='o', label='Confirmed')
-ax0.semilogy(doys_z-1, z,
-             linestyle="-.", label='%g exp(%g [d - 60])' % (A, r))
-ax0.semilogy(doys_z2-1, z_2,
-             linestyle="--", label='%g exp(%g [d - 80])' % (A_2, r_2))
-ax0.semilogy(doys_z3-1, z_3,
-             linestyle="--", label='%g exp(%g [d - 102])' % (A_3, r_3))
+ax0.set_ylim([2, 7000])
+ax0.plot(doys-1, values, marker='o', label='Confirmed')
+ax0.plot(doys_z-1, z,
+         linestyle="-.", label='%g exp(%g [d - 60])' % (A, r))
+ax0.plot(doys_z2-1, z_2,
+         linestyle="--", label='%g exp(%g [d - 80])' % (A_2, r_2))
+ax0.plot(doys_z3-1, z_3,
+         linestyle="--", label='%g exp(%g [d - 102])' % (A_3, r_3))
 
 
 ax0.arrow(77-1, 60, 0, 240)
@@ -88,8 +88,8 @@ gpop = 83149030    # Wikipedia, population of Germany, at 30 Sept 2019
 gscale = bpop / gpop
 
 gdates, gdoys, gvalues = fetch('virus-germany-2020.dat')
-ax0.semilogy(gdoys-1, gvalues * gscale, marker='x', label='Germany (scaled)')
-ax0.legend(loc='lower right')
+ax0.plot(gdoys-1, gvalues * gscale, marker='x', label='Germany (scaled)')
+ax0.legend(loc='upper left')
 
 plt.title('Confirmed coronavirus cases in Berlin and Germany (scaled)')
 
