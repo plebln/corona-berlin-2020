@@ -68,7 +68,7 @@ ax0 = fig.add_subplot(gs[0,0])
 ax0.xaxis_date()
 ax0.xaxis.set_major_formatter(myFmt)
 
-ax0.set_ylim([2, 7000])
+ax0.set_ylim([2, 9000])
 ax0.plot(doys-1, values, marker='o', label='Confirmed')
 ax0.plot(doys_z-1, z,
          linestyle="-.", label='%g exp(%g [d - 60])' % (A, r))
@@ -80,8 +80,12 @@ ax0.plot(doys_z3-1, z_3,
 
 ax0.arrow(77-1, 60, 0, 240)
 ax0.text(76.7-1, 30, 'Schools closed', horizontalalignment='center')
-ax0.arrow(82-1, 200, 0, 600)
-ax0.text(81.7-1+2, 100, '"Lockdown"', horizontalalignment='center')
+ax0.arrow(82-1, 800 - 500, 0, 500)
+ax0.text(82-1+2, 200, '"Lockdown"', horizontalalignment='left')
+# Easter, 2020-04-12 = doy 103
+ax0.arrow(103-1, 4500 - 3000, 0, 3000)
+ax0.text(103-1, 1200, 'Easter', horizontalalignment='center')
+
 
 bpop =  3748148    # Wikipedia, population of Berlin, at 31 Dec 2018
 gpop = 83149030    # Wikipedia, population of Germany, at 30 Sept 2019
@@ -103,6 +107,7 @@ ax1.xaxis.set_major_formatter(myFmt)
 
 ax1.plot(doys[0:]-1, rdelta[0:], 'bo')
 ax1.set_xlim([doys[0]-2, horizon])
+ax1.set_ylim([0, 20])
 ax1.set_title('Relative daily increase (%)')
 plt.xlabel('Date in 2020')
 
