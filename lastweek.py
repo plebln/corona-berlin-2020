@@ -1,14 +1,18 @@
 
 import daytable
+import sys
 
-dt = daytable.DayTable('virus-germany-2020.dat')
+if len(sys.argv) != 2:
+	print('Usage: {command} {history file}')
+	raise Exception
+
+dt = daytable.DayTable(sys.argv[1])
 
 delay = 7
-for f in range(len(dt.dates)):
-    if f < delay + 1:
-        continue
+for f in range(delay + 1, len(dt.dates) - 1):
+    # Centered difference
+    rate = (dt.values[f+1] - dt.values[f-1]) / dt.values[f]
+    oldrate = (dt.values[f - delay + 1] - dt.values[f - delay - 1]) \
+        / dt.values[f - delay]
 
-    diff = dt.values[f] - dt.values[f-1]
-    olddiff = dt.values[f - delay] - dt.values[f - delay - 1]
-
-    print(dt.dates[f], dt.doys[f], dt.values[f], diff/olddiff)
+    print(dt.dates[f], dt.doys[f], dt.values[f], rate/oldrate)
