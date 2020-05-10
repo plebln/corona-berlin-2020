@@ -86,6 +86,9 @@ ax0.text(82-1+2, 200, '"Lockdown"', horizontalalignment='left')
 ax0.arrow(103-1, 4500 - 3000, 0, 3000)
 ax0.text(103-1, 1200, 'Easter', horizontalalignment='center')
 
+# School back, 2020-05-04 = doy 125
+ax0.arrow(125-1, 6000 - 3000, 0, 3000)
+ax0.text(125-1, 2500, 'School back', horizontalalignment='left')
 
 bpop =  3748148    # Wikipedia, population of Berlin, at 31 Dec 2018
 gpop = 83149030    # Wikipedia, population of Germany, at 30 Sept 2019
