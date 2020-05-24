@@ -15,4 +15,5 @@ for f in range(delay + 1, len(dt.dates) - 1):
     oldrate = (dt.values[f - delay + 1] - dt.values[f - delay - 1]) \
         / dt.values[f - delay]
 
-    print(dt.dates[f], dt.doys[f], dt.values[f], rate/oldrate)
+    summedcases = dt.values[f+1] - dt.values[f-delay+1]
+    print(dt.dates[f], dt.doys[f], dt.values[f], rate/oldrate, summedcases)

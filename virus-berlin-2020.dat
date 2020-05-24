@@ -87,6 +87,14 @@
 2020-05-19   140  6503	     29		726	503	282	344	942	716	673	491	294	528	661	343	186	pressemitteilung.936100.php
 2020-05-20   141  6552	     49		727	511	282	350	952	717	684	493	294	535	663	344	186	p936611.php
 2020-05-21   142  6582	     30		733	515	282	352	952	727	687	494	298	536	662	344	190	p936652.php
+2020-05-22   143  6611	     29		738	517	286	352	953	731	697	495	298	536	664	344	190	p936928.php
+2020-05-23   144  6636	     25		738	519	289	353	954	740	699	496	299	539	665	345	191	p936962.php
+2020-05-24   145  6641	     5		740	519	290	353	954	740	669	496	300	539	666	345	191	p936988.php
+# Berlin is at 177 Fälle / 100000 Einw. (cumulative incidence), says RKI today.
+# Wikipedia says Berlin population is 3.77M 
+
+# RKI Situationsbericht 2020-05-24.en.pdf says 7-day incidence is 4.8 (n=180)
+# I get 187 for 7d to 2020-05-24, so 4.96 / 100000 /week, i.e. Grün.
 
 # Notes:
 #  (1) Date of Pressemitteilung. Until 15.03.2020, numbers reported
@@ -94,3 +102,9 @@
 #  (2) Recovered ("genesen") numbers started around 2020-03-28.
 #  (3) Why is there -2 for Spandau on 2020-04-13?
 #  (4) "Technische Umstellungen in der Meldesoftware" on 22.04.20
+#  (5) Corona-Ampel threshold for Berlin is 20 / 100000/ Woche (Gelb)
+#      i.e. 754 / Week and 30 for Rot. See https://www.berlin.de/corona/faq
+#      And 4.7% of ICU beds = 60 ==> 1200 COVID-19 ICU places.
+#      Gelb at 15% ==> 180.
+
+
