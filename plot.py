@@ -60,7 +60,7 @@ z_3 = A_3 * np.exp(r_3 * (doys_z3 - 102))
 print('On', horizon_datetime, 'predict', int(z_3[-1]))
 
 fig = plt.figure()
-gs = matplotlib.gridspec.GridSpec(nrows=2, ncols=1, height_ratios=[3,1])
+gs = matplotlib.gridspec.GridSpec(nrows=2, ncols=1, height_ratios=[1,1])
 
 myFmt = matplotlib.dates.DateFormatter('%d.%m')
 
@@ -110,7 +110,7 @@ ax1.xaxis.set_major_formatter(myFmt)
 
 ax1.plot(doys[0:]-1, rdelta[0:], 'bo')
 ax1.set_xlim([doys[0]-2, horizon])
-ax1.set_ylim([0, 20])
+ax1.set_ylim([0, 4])
 ax1.set_title('Relative daily increase (%)')
 plt.xlabel('Date in 2020')
 
